@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Rantec | Livestock </title>
+  
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon/dashboard-icon.png">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="styles/angus.css" />
+  <!-- Jquery link  -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <!-- QRCode.js library hosted on cdnjs CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    
+
+</head>
+<body>
+  <section id="menu">
+
+  </section>
+    <section id="interface">
+      <div class="navigation">
+        <div class="n1">
+          <div>
+            <i  id="menu-btn" class="fa-solid fa-bars"></i>
+          </div>
+          <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="search">
+          </div>
+        </div>
+        <div class="profile">
+          <i class="fa-regular fa-bell"></i>
+          <button class="profile-btn">
+            <!-- <i class="fa-regular fa-bell"></i> -->
+            <img src="images/emma.jpg" alt="">
+          </button>
+          
+          <div class="dropdown-content">
+            <div class="profile-info">
+              <h5 class="full-name">John Tunde</h5>
+              <p class="email">ahmad@gmail.com</p>
+            </div>
+            <a href="#" class="edit-picture">Change Picture</a>
+            <a href="#" class="password">Password</a>
+            <a href="index.html"><i class="fa-solid fa-sign-out"></i>Logout</a>
+            <div class="sparkles">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+      <!-- row markup starts here -->
+      <div class="row">
+        <div class="left-align">
+         <a href="livestock-1.html"><i class="fa-solid fa-arrow-left"></i> </a>
+        </div>
+        <div class="center-align">
+         <h4> Assigned Livestock List </h4> 
+        </div>
+        <div class="right-align">
+          <!-- <div class="dot"></div> -->
+          <!-- <span class="number">7</span> -->
+          <!-- <button class="top-add" id="addButton">+Add</button> -->
+        </div>
+
+        <div id="qrCodeModal" class="modal qrCodeImageContainer">
+          <div class="modal-content qrCodeImage qrCodeImageContainer">
+            <span class="close">&times;</span>
+            <img id="qrCodeImage" src="images/qr-code.png" alt="QR Code" class="qrCodeImageContainer">
+          </div>
+        </div>
+
+
+             <!-- Form container with hidden form content -->
+    <div class="form-container" id="formContainer">
+    <div class="form-content">
+      <span class="close">&times;</span>
+      <form>
+        <label for="vetName">Name:</label>
+        <input type="text" id="vetName" name="vetName"  placeholder=""required>
+  
+        <label for="vetName">Breed:</label>
+        <input type="text" id="vetName" name="vetName"  placeholder=""required>
+
+        <label for="date">DOB:</label>
+        <input type="date" id="date" name="date" required>
+  
+        <label for="diseaseName">Weight:</label>
+        <input type="text" id="diseaseName" name="diseaseName" placeholder="" required>
+  
+        <label for="cause">Sex:</label>
+        <input type="text" id="cause" name="cause" placeholder="" required>
+  
+        <label for="vaccine">ID:</label>
+        <input type="text" id="vaccine" name="vaccine"  placeholder=""required>
+  
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+       
+    <!-- <div class="form-popup" id="number-form">
+    <form>
+      <label for="sex-input">Sex:</label>
+      <input type="text" id="sex-input" placeholder="Enter sex" required>
+      
+      <label for="id-input">ID:</label>
+      <input type="text" id="id-input" placeholder="Enter ID" required>
+      
+      <div class="form-buttons">
+        <button type="submit" id="submit-btn">Submit</button>
+        <button type="button" id="close-btn">Close</button>
+      </div>
+    </form>
+  </div> -->
+  <!-- row markup ends here -->
+      </div>
+      <div class="values"></div>
+  
+      <!-- Board markup starts here -->
+    <div class="table-container">
+      <table width="100%">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Breed</td>
+            <td>Sex</td>
+            <td>Appointment Type</td>
+            <td>VIEW</td>
+            <td>QR CODE</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="people">
+              <div class="people-des">
+                <h5>Cattle</h5>
+              </div>
+            </td>
+  
+            <td class="people-des">
+              <h5>White Fulani</h5>
+            </td>
+            <td class="active"><p>M</p></td>
+  
+            <td class="role">
+              <p>Vaccination</p>
+            </td>
+  
+            <td class="role">
+              <a href="group-C.html">
+                <i class="fa-solid fa-eye"></i>
+              </a>
+            </td>
+  
+            <td class="edit scanButton"  data-image="images/qr-code.png"><i class="fa-solid fa-qrcode"></i>
+            </td>
+          </tr>
+          <tr>
+            <td class="people">
+              <div class="people-des">
+                <h5>Goat</h5>
+              </div>
+            </td>
+  
+            <td class="people-des">
+              <h5>Sokoto Gudali</h5> 
+            </td>
+            <td class="active"><p>M</p></td>
+  
+            <td class="role">
+              <p>Vaccination</p>
+            </td>
+  
+            <td class="role">
+              <a href="group-C.html">
+                <i class="fa-solid fa-eye"></i>
+              </a>
+            </td>
+  
+            <td class="edit scanButton"  data-image="images/qr-code.png"><i class="fa-solid fa-qrcode"></i>
+             </td>
+          </tr>
+          <tr>
+            <td class="people">
+              <div class="people-des">
+                <h5>Sheep</h5>
+              </div>
+            </td>
+  
+            <td class="people-des">
+               <h5>Red Bororo</h5> 
+            </td>
+            <td class="active"><p>F</p></td>
+  
+            <td class="ro le">
+              <p>Medical Check-Up</p>
+            </td>
+  
+            <td class="role">
+              <a href="group-C.html">
+                <i class="fa-solid fa-eye"></i>
+              </a>
+            </td>
+  
+            <td class="edit scanButton"  data-image="images/qr-code.png"><i class="fa-solid fa-qrcode"></i>
+             </td>
+          </tr>
+          <tr>
+            <td class="people">
+              <div class="people-des">
+                <h5>Goat</h5>
+              </div>
+            </td>
+  
+            <td class="people-des">
+              <h5>Muturu</h5> 
+            </td>
+            <td class="active"><p>F</p></td>
+  
+            <td class="role">
+              <p>Vaccination</p>
+            </td>
+  
+            <td class="role">
+              <a href="group-C.html">
+                <i class="fa-solid fa-eye"></i>
+              </a>
+            </td>
+  
+            <td class="edit scanButton"  data-image="images/qr-code.png"><i class="fa-solid fa-qrcode"></i>
+             </td>
+          </tr>
+          <tr>
+            <td class="people">
+              <div class="people-des">
+                <h5>Cattle</h5>
+              </div>
+            </td>
+  
+            <td class="people-des">
+            <h5>Adamawa Gudali</h5>
+            </td>
+            <td class="active"><p>M</p></td>
+  
+            <td class="role">
+              <p>Breeding</p>
+            </td>
+  
+            <td class="role">
+              <a href="group-C.html">
+                <i class="fa-solid fa-eye"></i>
+              </a>
+            </td>
+  
+            <td class="edit scanButton"  data-image="images/qr-code.png"><i class="fa-solid fa-qrcode"></i>
+              </td>
+          </tr>
+          <tr>
+            <td class="people">
+              <div class="people-des">
+                <h5>Sheep</h5>
+              </div>
+            </td>
+  
+            <td class="people-des">
+               <h5>Sokoto Gudali</h5> 
+            </td>
+            <td class="active"><p>M</p></td>
+  
+            <td class="role">
+              <p>Health Check-Up</p>
+            </td>
+  
+            <td class="role">
+              <a href="group-C.html">
+                <i class="fa-solid fa-eye"></i>
+              </a>
+            </td>
+  
+            <td class="edit scanButton" data-image="images/qr-code.png"><i class="fa-solid fa-qrcode"></i>
+             </td>
+          </tr>
+          <tr>
+            <td class="people">
+              <div class="people-des">
+                <h5>Cattle</h5>
+              </div>
+            </td>
+  
+            <td class="people-des">
+               <h5>White Fulani</h5> 
+            </td>
+            <td class="active"><p>F</p></td>
+  
+            <td class="role">
+              <p>Vaccination</p>
+            </td>
+  
+            <td class="role">
+              <a href="group-C.html">
+                <i class="fa-solid fa-eye"></i>
+              </a>
+            </td>
+  
+            <td class="edit scanButton"  data-image="images/qr-code.png"><i class="fa-solid fa-qrcode"></i>
+             </td>
+          </tr>
+            <td class="people">
+              <div class="people-des">
+                <h5>Pig</h5>
+              </div>
+            </td>
+  
+            <td class="people-des">
+             <h5>Muturu</h5> 
+            </td>
+            <td class="active"><p>F</p></td>
+  
+            <td class="role">
+              <p>Medical Check-Up</p>
+            </td>
+  
+            <td class="role">
+              <a href="group-C.html">
+                <i class="fa-solid fa-eye"></i>
+              </a>
+            </td>
+  
+            <td class="edit scanButton"  data-image="images/qr-code.png"><i class="fa-solid fa-qrcode"></i>
+             </td>
+          </tr>
+            <td class="people">
+              <div class="people-des">
+                <h5>Goat</h5>
+              </div>
+            </td>
+  
+            <td class="people-des">
+            <h5>Muturu</h5> 
+            </td>
+            <td class="active"><p>M</p></td>
+  
+            <td class="role">
+              <p>Vaccination</p>
+            </td>
+  
+            <td class="role">
+              <a href="group-C.html">
+                <i class="fa-solid fa-eye"></i>
+              </a>
+            </td>
+  
+            <td class="edit scanButton"  data-image="images/qr-code.png"><i class="fa-solid fa-qrcode"></i>
+             </td>
+          </tr>
+            <!-- <td class="people">
+              <div class="people-des">
+                <h5>Cattle</h5>
+              </div>
+            </td>
+  
+            <td class="people-des">
+              <h5>Muturu</h5> 
+            </td>
+            <td class="active"><p>M</p></td>
+  
+            <td class="role">
+              <p>Vaccination</p>
+            </td>
+  
+            <td class="role">
+              <a href="group-C.html">
+                <i class="fa-solid fa-eye"></i>
+              </a>
+            </td>
+  
+            <td class="edit scanButton"  data-image="images/qr-code.png"><i class="fa-solid fa-qrcode"></i>
+             </td>
+          </tr> -->
+            <td class="people">
+              <div class="people-des">
+                <h5>Sheep</h5>
+              </div>
+            </td>
+  
+            <td class="people-des">
+               <h5>Limousin Cattle</h5> 
+            </td>
+            <td class="active"><p>F</p></td>
+  
+            <td class="role">
+              <p>Vaccination</p>
+            </td>
+  
+            <td class="role">
+              <a href="group-C.html">
+                <i class="fa-solid fa-eye"></i>
+              </a>
+            </td>
+  
+            <td class="edit scanButton"  data-image="images/qr-code.png"><i class="fa-solid fa-qrcode"></i>
+             </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </section>
+    <!-- row markup ends here -->
+    <script>
+
+fetch('nav2.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu').innerHTML = data;
+      });
+
+ </script>
+<!-- Load qrcode-svg library from a CDN -->
+<!-- <script src="https://unpkg.com/qrcode-svg/dist/qrcode.min.js"></script> -->
+<!-- Load your custom JavaScript file after the library -->
+<script src="scripts/angus.js"></script>
+</body>
+</html>

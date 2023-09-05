@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Rantec | Home</title>
+  
+  
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon/home-icon.png">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="styles/nav.css" />
+    
+</head>
+<body>
+  <!-- Header starts here -->
+<section id="menu">
+  <!-- <div class="close-btn">
+    <i class="fas fa-times"></i>
+  </div> -->
+  <div class="logo">
+    <img src="images/Screenshot_20230711-181851 (2).png" alt="">
+    <h2>Hi  Ahmad</h2><br />
+  </div>
+
+  <!-- menu items -->
+  <div class="menu-items">
+     <div class="items"><a href="farmerhome.html"><i class="fa-solid fa-house"></i>Home</a></div>
+     <div class="items"><a class="sub-btn"><i class="fa-solid fa-user-doctor"></i>Livestock
+    <!-- dropdown menu --> 
+    <!-- dropdown arrow -->
+     <i class="fas fa-angle-right dropdown"></i>
+    </a>
+
+    <div class="sub-menu">
+       <a href="livestock-1.html" class="sub-items">Large Ruminant</a>
+       <a href="" class="sub-items">Small Ruminant</a>
+    </div>
+    </div>
+     <div class="items"><a href="upcoming.html"><i class="fa-solid fa-cart-shopping"></i>Booking</a></div>
+  </div>
+</section>
+
+<!-- Jquery link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+            $('.sub-btn').click(function() {
+                $(this).next('.sub-menu').slideToggle();
+                $(this).find('.dropdown').toggleClass('rotate');
+            });
+        });
+
+   </script>
+
+</body>
+</html>

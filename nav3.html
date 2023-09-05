@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Rantec | Home</title>
+  
+  
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon/home-icon.png">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="styles/nav3.css" />
+<!-- Jquery link  -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+  <!-- Header starts here -->
+<section id="menu">
+  <div class="brand">
+    <img src="images/logo.png" alt="">
+  </div>
+  <div class="logo">
+    <img src="images/no-image.jpg" alt="">
+    <h2>Hi Admin</h2><br />
+  </div>
+  <div class="items">
+    <ul id="menu-list">
+      <li class="menu-item">
+        <div class="indicator"></div><i class="fa-solid fa-house"></i><a href="admindashboard.html">Dashboard</a>
+      </li>
+      <li class="menu-item">
+        <i class="fa-solid fa-calendar-check"></i><a href="#">Appointments</a>
+      </li>
+      <li class="menu-item">
+        <i class="fa-solid fa-tasks"></i><a href="#">Tasks</a>
+      </li>
+      <li class="menu-item">
+        <i class="fa-solid fa-hat-cowboy"></i><a href="#">Farmers</a>
+      </li>
+      <li class="menu-item">
+        <i class="fa-solid fa-user-md"></i><a href="#">Vet. Doctors</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+
+  <script>
+    
+  const menuItems = document.querySelectorAll('.menu-item');
+
+  menuItems.forEach((menuItem) => {
+    menuItem.addEventListener('click', (event) => {
+      // Remove active class from all menu items
+      menuItems.forEach((item) => {
+        item.classList.remove('active');
+      });
+
+      // Add active class to the clicked menu item
+      menuItem.classList.add('active');
+    });
+  });
+
+
+</script>
+
+</body>
+</html>

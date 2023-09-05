@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Rantec| Home</title>
+  
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon/dashboard-icon.png">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="styles/farmerhome.css" />
+    <!-- Jquery link  -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+</head>
+<body>
+  <section id="menu">
+    
+  </section>
+    <section id="interface">
+      <div class="navigation">
+        <div class="n1">
+          <div>
+            <i  id="menu-btn" class="fa-solid fa-bars"></i>
+          </div>
+          <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="search">
+          </div>
+        </div>
+         <!-- Navigation content -->
+        <div class="dropdown">
+          <button class="profile-btn">
+            <i class="fa-regular fa-bell"></i>
+            <img src="images/emma.jpg" alt="">
+          </button>
+          <div class="dropdown-content">
+            <div class="profile-info">
+              <h5 class="full-name">John Tunde</h5>
+              <p class="email">johntunde@gmail.com</p>
+            </div>
+            <a href="#" class="edit-picture">Change picture</a>
+            <!-- <a href="#"></a>
+            <a href="#">Email</a> -->
+            <a href="#" class="password">Password</a>
+            <a href="index.html"><i class="fa-solid fa-sign-out"></i>Logout</a>
+            <div class="sparkles">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        
+          
+        </div>
+        
+      
+      </div>
+      </div>
+      <h3 class="i-name">
+        Dashboard
+      </h3>
+      <div class="values">
+        <div class="val-box">
+          <i class="fa-solid fa-cow"></i>
+          <div>
+            <!-- <h3>100</h3> -->
+            <span>Cows</span>
+          </div>
+        </div>
+      
+        <div class="val-box">
+          <i class="fa-solid fa-cow"></i>
+          <div>
+            <!-- <h3>120</h3> -->
+            <span>Sheeps</span>
+          </div>
+        </div>
+      
+        <div class="val-box">
+          <i class="fa-solid fa-cow"></i>
+          <div>
+            <!-- <h3>150</h3> -->
+            <span>Goats</span>
+          </div>
+        </div>
+
+        <div class="val-box">
+          <i class="fas fa-glass-whiskey"></i>
+          <div>
+            <!-- <h3>5</h3> -->
+            <span>Milk Records</span>
+          </div>
+        </div>
+        <div class="val-box">
+          <i class="fas fa-utensils"></i>
+          <div>
+            <!-- <h3>5</h3> -->
+            <span>Meat Productions</span>
+          </div>
+        </div>
+        <div class="val-box">
+          <i class="fas fa-box-open"></i>
+          <div>
+            <!-- <h3>5</h3> -->
+            <span>Inventory</span>
+          </div>
+        </div>
+
+        <div class="val-box">
+          <i class="fas fa-money-bill"></i>
+          <div>
+            <!-- <h3>income/</h3> -->
+            <span>Expenses</span>
+          </div>
+        </div>
+
+        <div class="val-box">
+          <i class="fas fa-paw"></i>
+          <div>
+            <!-- <h3>5</h3> -->
+            <span>Yearlings</span>
+          </div>
+        </div>
+    
+    </div>
+    <div class="fin__name">
+      <h2>Financial Summary:</h2>
+    </div>
+    <div class="board">
+
+      <!-- <div class="board"> -->
+
+        <div class="board__values">
+          <p class="label">Cows</p>
+          <p class="number">184</p>
+          <p class="label">Purchased: 10</p>
+          <p class="label">Sold: 1</p>
+          <!-- <p class="label">Healthy: 10</p> -->
+          <p class="label">Un-healthy: 10</p>
+          <p class="label">Growing: 20</p>
+        </div>
+
+        <div class="board__values">
+          <p class="label">Sheeps</p>
+          <p class="number">168</p>
+          <p class="label">Purchased: 1</p>
+          <p class="label">Sold: 10</p>
+          <!-- <p class="label">healthy: 10</p> -->
+          <p class="label">Un-healthy: 5</p>
+          <p class="label">Growing: 34</p>
+        </div>
+
+        <div class="board__values">
+          <p class="label">Goats</p>
+          <p class="number">265</p>
+          <p class="label">Purchased: 1</p>
+          <p class="label">Sold: 10</p>
+          <!-- <p class="label">healthy: 15</p> -->
+          <p class="label">Un-healthy: 30</p>
+          <p class="label">Growing: 5</p>
+        </div>
+        
+      </div>
+
+      <div class="section">
+        <h2>Financial Overview</h2>
+        <div class="dropdown">
+            <label for="month-select">Select Month:</label>
+            <select id="month-select">
+                <option value="01">January</option>
+                <option value="02">February</option>
+                <option value="03">March</option>
+                <option value="04">April</option>
+                <option value="05">May</option>
+                <option value="06">June</option>
+                <option value="07">July</option>
+                <option value="08">August</option>
+                <option value="09">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+            </select>
+        </div>
+        <div class="results">
+            <h3>Results for <span id="selected-month">[Selected Month]</span></h3>
+  
+            <p>Income: N <span id="income">0.00</span></p>
+            <p>Expenses: N <span id="expenses">0.00</span></p>
+            <p>Profit: N <span id="profit">0.00</span></p>
+        </div>
+    </div>
+    
+      <div class="chart-container">
+        <h2>Milk Monthly Report</h2>
+        <div class="chart" id="bar-chart"></div>
+    </div>
+  
+    </div>
+    </section>
+    <!-- <script src="scripts/admindashboard.js"></script> -->
+
+    <script>
+
+const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const milkProduction = [1200, 1700, 1900, 1400, 1800, 1900, 1900, 2000, 2100, 2200, 2300, 2400];
+
+// Create the chart
+const chartContainer = document.getElementById('bar-chart');
+
+const chartOptions = {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Milk Production Over the month'
+    },
+    xAxis: {
+        categories: month,
+        title: {
+            text: 'Months'
+        }
+    },
+    yAxis: {
+        title: {
+            text: 'Milk Production (liters)'
+        }
+    },
+    series: [{
+        name: 'Milk Production',
+        data: milkProduction
+    }]
+};
+
+Highcharts.chart(chartContainer, chartOptions);
+
+document.addEventListener('DOMContentLoaded', function () {
+    const monthSelect = document.getElementById('month-select');
+    const selectedMonth = document.getElementById('selected-month');
+    const incomeElement = document.getElementById('income');
+    const expensesElement = document.getElementById('expenses');
+    const profitElement = document.getElementById('profit');
+
+    monthSelect.addEventListener('change', function () {
+        const selectedValue = monthSelect.value;
+        selectedMonth.textContent = monthSelect.options[monthSelect.selectedIndex].text;
+
+        // Simulated data for demonstration purposes
+        const income = Math.random() * 1100 + 600;
+        const expenses = Math.random() * 800 + 400;
+        const profit = income - expenses;
+
+        incomeElement.textContent = income.toFixed(2);
+        expensesElement.textContent = expenses.toFixed(2);
+        profitElement.textContent = profit.toFixed(2);
+    });
+});
+
+
+      fetch('nav2.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu').innerHTML = data;
+      });
+    </script>
+    
+  <!-- <script src="scripts/Group-A.js"></script> -->
+</body>
+</html>

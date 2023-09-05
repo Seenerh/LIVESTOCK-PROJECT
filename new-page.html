@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Rantec| New </title>
+  
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon/dashboard-icon.png">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="styles/new-page.css" />
+    <!-- Jquery link  -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+      <!-- Header starts here -->
+<section id="menu">
+  <!-- <div class="close-btn">
+    <i class="fas fa-times"></i>
+  </div> -->
+  <div class="logo">
+    <img src="images/Screenshot_20230711-181851 (2).png" alt="">
+    <h2>Hi  Ahmad</h2><br />
+  </div>
+
+  <!-- menu items -->
+  <div class="menu-items">
+     <div class="items"><a href="farmerhome.html"><i class="fa-solid fa-house"></i>Dashboard</a></div>
+     <div class="items"><a class="sub-btn"><i class="fa-solid fa-user-doctor"></i>Livestock
+    <!-- dropdown menu --> 
+    <!-- dropdown arrow -->
+     <i class="fas fa-angle-right dropdown"></i>
+    </a>
+
+    <div class="sub-menu">
+      <a href="livestock-1.html" class="sub-items"><i class="fas fa-horse"></i>Large Ruminant</a>
+      <a href="#" class="sub-items"><i class="fa-solid fa-hippo"></i>Small Ruminant</a>
+    </div>
+    </div>
+     <div class="items"><a href="upcoming.html"><i class="fa-solid fa-cart-shopping"></i>Booking</a></div>
+  </div>
+</section>
+    <section id="interface">
+      <div class="navigation">
+        <div class="n1">
+          <div>
+            <i  id="menu-btn" class="fa-solid fa-bars"></i>
+          </div>
+          <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="search">
+          </div>
+        </div>
+        <div class="profile">
+          <i class="fa-regular fa-bell"></i>
+          <button class="profile-btn">
+            <!-- <i class="fa-regular fa-bell"></i> -->
+            <img src="images/Screenshot_20230711-181851 (2).png" alt="">
+          </button>
+          
+          <div class="dropdown-content">
+            <div class="profile-info">
+              <h5 class="full-name">Ahmad Sinan</h5>
+              <p class="email">ahmad@gmail.com</p>
+            </div>
+            <a href="#" class="edit-picture">Change Picture</a>
+            <a href="#" class="password">Password</a>
+            <a href="index.html"><i class="fa-solid fa-sign-out"></i>Logout</a>
+            <div class="sparkles">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        
+       
+  
+      </div>
+  
+      </div>
+      <h3 class="i-name">
+        BOOKING
+      </h3>
+      <div class="status-box">
+        <div class="left-align"><a href="upcoming.html">Upcoming </a></div>
+        <div class="center-align"><a href="pending.html"> Pending</a></div>
+        <div class="right-align"><a href="new-page.html"> New </a></div>
+      </div>
+      
+      <form class="form-container">
+      
+        <div class="form-row">
+          <label for="group">Full Name:</label>
+          <input type="text" id="group" placeholder=""  name="group">
+        </div>
+        <div class="form-row">
+          <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+        </div>
+        <div class="form-row">
+          <label for="number">Farm Location:</label>
+          <input type="text" id="number" placeholder="Enter Farm Address " name="number">
+        </div>
+
+        <div class="form-row">
+          <label for="livestock-type">Appointment Type:</label>
+          <!-- <input type="text" id="livestock-type"  placeholder="Enter type of livestock" name="livestock-type"> -->
+          <select id="livestock-type" name="livestock-type" required>
+            <option value="">Select Appointment Type</option>
+            <option value="vaccination">Vaccination</option>
+            <option value="healthCheck">Health Check-Up</option>
+            <option value="breeding">Breeding</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="species">Livestock Breed:</label>
+        <input type="text" id="species" name="species" required>
+        </div>
+
+      
+        <div class="form-row">
+          <label for="age">Livestock Age:</label>
+          <input type="text" id="age" name="age">
+        </div>
+
+        <div class="form-row">
+          <label for="sex">Livestock Sex:</label>
+          <input type="text" id="sex" name="sex">
+      
+        </div>
+
+        <div class="form-row">
+          <label for="numAnimals">Number of Animals:</label>
+          <input type="number" id="numAnimals" name="numAnimals">
+  
+        </div>
+      
+        <div class="form-row">
+          <label for="date">Preferred Date:</label>
+          <input type="date" id="date"  placeholder="Select Date"name="date">
+        </div>
+      
+        <div class="form-row">
+          <label for="symptoms">Symptoms:</label>
+          <textarea id="symptoms" name="symptoms" placeholder="Describe the symptoms"></textarea>
+        </div>
+      
+        <div class="form-row">
+          <input type="submit" value="Book Appointment">
+        </div>
+      </form>
+     
+  
+    </div>
+    </section>
+  <!-- <script src="scripts/booking.js"></script> -->
+
+  <script>
+
+$(document).ready(function() {
+            $('.sub-btn').click(function() {
+                $(this).next('.sub-menu').slideToggle();
+                $(this).find('.dropdown').toggleClass('rotate');
+            });
+        });
+  </script>
+</body>
+</html>

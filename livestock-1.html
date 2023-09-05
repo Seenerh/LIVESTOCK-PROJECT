@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rantec | Livestock</title>
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon/cow-icon.jpg" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="styles/livestock-1.css" />
+    <!-- Jquery link  -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <!-- Header starts here -->
+<section id="menu">
+  <!-- <div class="close-btn">
+    <i class="fas fa-times"></i>
+  </div> -->
+  <div class="logo">
+    <img src="images/Screenshot_20230711-181851 (2).png" alt="">
+    <h2>Hi  Ahmad</h2><br />
+  </div>
+
+  <!-- menu items -->
+  <div class="menu-items">
+     <div class="items"><a href="farmerhome.html"><i class="fa-solid fa-house"></i>Dashboard</a></div>
+     <div class="items"><a class="sub-btn"><i class="fa-solid fa-user-doctor"></i>Livestock
+    <!-- dropdown menu --> 
+    <!-- dropdown arrow -->
+     <i class="fas fa-angle-right dropdown"></i>
+    </a>
+
+    <div class="sub-menu">
+      <a href="livestock-1.html" class="sub-items"><i class="fas fa-horse"></i>Large Ruminant</a>
+       <a href="#" class="sub-items"><i class="fa-solid fa-hippo"></i>Small Ruminant</a>
+    </div>
+    </div>
+     <div class="items"><a href="upcoming.html"><i class="fa-solid fa-cart-shopping"></i>Booking</a></div>
+  </div>
+</section>
+    <!-- nav starts here  -->
+    <section id="interface">
+      <div class="navigation">
+        <div class="n1">
+          <div>
+            <i id="menu-btn" class="fa-solid fa-bars"></i>
+          </div>
+          <!-- <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="search" />
+          </div> -->
+        </div>
+        <div class="profile">
+          <i class="fa-regular fa-bell"></i>
+          <button class="profile-btn">
+            <img src="images/Screenshot_20230711-181851 (2).png" alt="">
+          </button>
+          
+          <div class="dropdown-content">
+            <div class="profile-info">
+              <h5 class="full-name">Ahmad Sinan</h5>
+              <p class="email">ahmad@gmail.com</p>
+            </div>
+            <a href="#" class="edit-picture">Change Picture</a>
+            <a href="#" class="password">Password</a>
+            <a href="index.html"><i class="fa-solid fa-sign-out"></i>Logout</a>
+            <div class="sparkles">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      <!-- nav ends here  -->
+    
+      <!-- Add a button to trigger the form -->
+    <h3 class="i-name" id="open-form-btn"></h3>
+
+      <div class="container">
+        <div class="box">
+          <div class="top-align">
+            <div class="left-align"></div>
+            <div class="right-align"></div>
+          </div>
+          <div class="center-align"><a href="angus.html"><img src="images/local4.jpg" alt="Local Livestock"> </a></div>
+          <div class="bottom-align">LOCAL</div>
+        </div>
+        
+        <div class="box">
+          <div class="top-align">
+            <div class="left-align"></div>
+            <div class="right-align"></div>
+          </div>
+          <div class="center-align"><a href="angus-exotic.html"><img src="images/exotic2.webp" alt="Exotic Livestock"></a></div>
+          <div class="bottom-align">EXOTIC</div>
+        </div>
+
+      
+      <!-- content interface starts here  -->
+    </section>
+<script src="scripts/livestock-1.js"></script>
+<script>
+  $(document).ready(function() {
+            $('.sub-btn').click(function() {
+                $(this).next('.sub-menu').slideToggle();
+                $(this).find('.dropdown').toggleClass('rotate');
+            });
+        });
+</script>
+  </body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rantec | Landing Page </title>
+
+
+  <!-- favicon icon -->
+  <link rel="shortcut icon" type="image/jpg" href="images/favicon/home-icon.png">
+
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- font awesome icons link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- boxicons link -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- custom stylesheet -->
+  <link rel="stylesheet" href="./styles/style.css">
+  <!-- scroll reveal link -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">
+        <i class="fa-solid fa-cow"></i> Rantec
+      </a>
+      <div class="nav__menu show-menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#home" class="nav__link active-link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="#about" class="nav__link">About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#products" class="nav__link">Products</a>
+          </li>
+          <li class="nav__item">
+            <a href="#faqs" class="nav__link">FAQS</a>
+          </li>
+          <li class="nav__item">
+            <a href="#contact" class="nav__link">Contact</a>
+          </li>
+          <li class="nav__item">
+            <a href="signup.html" class="nav__link">Get started</a>
+          </li>
+        </ul>
+
+        <div class="nav__close" id="nav-close">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+
+      <div class="nav__btns">
+        <!-- Theme change button -->
+        <i class='bx bxs-moon ri-moon-line ri-sun-line change theme' id="theme-button"></i>
+        
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fa-solid fa-bars ri-menu-line"></i>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+  <main class="main">
+    <!--**************** Home *************************-->
+    <section class="home" id="home">
+      <div class="home__container container grid">
+        <img src="images/landing-img/cows.jpg"   class="home__img" alt="">
+
+        <div class="home__data">
+          <h1 class="home__title">
+            Rantec will make <br> your livestock better
+          </h1>
+          <p class="home__description">
+            Create incredible livestock farm for your livestock add freshness to your new ideas.
+          </p>
+          <a href="#about" class="button button--flex">
+            Explore <i class='bx bx-right-top-arrow-circle'></i>
+          </a>
+        </div>
+
+        <div class="home__socials">
+          <span class="home__social-follow">Follow Us</span>
+
+          <div class="home__social-links">
+            <a href="https://www.facebook.com" target="_blank" class="home__social-links">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="htpps://www.instagram.com" target="_blank" class="home__social-links">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="htpps://www.twitter.com" target="_blank" class="home__social-links">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!--******************* About ********************-->
+    <section class="about section container" id="about">
+      <div class="about__container grid">
+        <img src="images/landing-img/vision.svg" class="about__img">
+
+        <div class="about__data">
+          <h2 class="section__title about__title button button--flex">
+            About Us
+          </h2>
+          <p class="about__description">
+            RanTec objective is to establish an environment that will allow all significant participants in the cattle value chain to
+            coexist peacefully and productively.
+            By empowering rural livestock farmers, particularly women, RanTec is also advancing the transformation of agriculture. 
+           
+          </p>
+          <h2 class="section__title about__title button button--flex">
+            Our Vision
+          </h2>
+
+          <div class="about__details">
+            <p class="about__details-description">
+              <i class="fa-solid fa-square-check"></i>
+              Being able to buy or sell livestock that is ready for slaughter and can be traced from any location in Nigeria
+            </p>
+
+            <p class="about__details-description">
+              <i class="fa-solid fa-square-check"></i>
+              Being able to buy or sell livestock that is ready for slaughter and can be traced from any location in Nigeria
+            </p>
+
+            <p class="about__details-description">
+              <i class="fa-solid fa-square-check"></i>
+              The capacity to purchase clean and hygienically processed meat from any location in Nigeria and have it delivered.
+            </p>
+
+            <p class="about__details-description">
+              <i class="fa-solid fa-square-check"></i>
+              The ability to carry out transactions without the need for physical cash at livestock markets situated in Nigeria's rural regions.
+            </p>
+            <p class="about__details-description">
+              <i class="fa-solid fa-square-check"></i>
+              The ability to participate in valuable conversations with veterinary professionals, animal production experts, and enthusiasts
+              through the organization of online conferences and courses.
+            </p>
+          </div>
+          <!-- <button class="button button--flex">
+             Shop now <i class='bx bx-right-top-arrow-circle'></i> -->
+          <!-- </button> -->
+
+        </div>
+      </div>
+    </section>
+    <!--******************* Steps ********************-->
+    <section class="steps section container">
+      <div class="steps__bg">
+        <h2 class="section__title-center steps__title">
+         Features
+        </h2>
+
+        <div class="steps__container grid">
+          <div class="steps__card">
+            <div class="steps__card-number">01</div>
+            <h3 class="steps__card-title">Choose Livestock</h3>
+            <p class="steps__card-description">We have several livestock you can choose </p>
+          </div>
+
+          <div class="steps__card">
+            <div class="steps__card-number">02</div>
+            <h3 class="steps__card-title">Place an order</h3>
+            <p class="steps__card-description"> Once your order is set, we move to the next step which is the shippping
+            </p>
+          </div>
+
+          <div class="steps__card">
+            <div class="steps__card-number">03</div>
+            <h3 class="steps__card-title">Get Meats delivered</h3>
+            <p class="steps__card-description">Our delivery processes is easy, you receive the meat direct to your door.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--******************* products ********************-->
+    <section class="product section container" id="products">
+      <h2 class="section__title-center">
+        Check out our <br> Products
+      </h2>
+
+      <p class="product__description">
+        Here are some selected products from our show shape and health. Buy and enjoy best quality.
+      </p>
+      <div class="product__container  grid">
+        <article class="product__card">
+          <div class="product__circle"></div>
+
+          <img src="images/diary.jpg" class="product__img" alt="">
+          <h3 class="product__title">
+            Dairy products
+          </h3>
+          <span class="product__price">N10,000</span>
+
+          <button class="button--flex product__button">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </button>
+        </article>
+
+        <article class="product__card">
+          <div class="product__circle"></div>
+
+          <img src="images/breed-cor.jpg"  class="product__img" alt="">
+          <h3 class="product__title">
+            Breeding Services
+          </h3>
+          <span class="product__price">N130,000</span>
+
+          <button class="button--flex product__button">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </button>
+        </article>
+
+        <article class="product__card">
+          <div class="product__circle"></div>
+
+          <img src="images/health service.jpg" class="product__img" alt="">
+          <h3 class="product__title">
+            Health Service
+          </h3>
+          <span class="product__price">N199,000</span>
+
+          <button class="button--flex product__button">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </button>
+        </article>
+
+        <article class="product__card">
+          <div class="product__circle"></div>
+
+          <img src="images/livestock-sales.jpg" class="product__img" alt="">
+          <h3 class="product__title">
+            Livestock Sales
+          </h3>
+          <span class="product__price">N100,000</span>
+
+          <button class="button--flex product__button">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </button>
+        </article>
+
+        <article class="product__card">
+          <div class="product__circle"></div>
+
+          <img src="images/training service.jpg" class="product__img" alt="">
+          <h3 class="product__title">
+            Training Services
+          </h3>
+          <span class="product__price">N129,000</span>
+
+          <button class="button--flex product__button">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </button>
+        </article>
+        <article class="product__card">
+          <div class="product__circle"></div>
+
+          <img src="images/meats.jpg" class="product__img" alt="">
+          <h3 class="product__title">
+            Meat Sales
+          </h3>
+          <span class="product__price">N129,000</span>
+
+          <button class="button--flex product__button">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </button>
+        </article>
+      </div>
+    </section>
+
+    <!--******************* Questions ********************-->
+    <section class="questions section" id="faqs">
+      <h2 class="section__title-center questions__title container">
+        Some common questions <br> were often asked
+      </h2>
+      <div class="questions__container container grid">
+        <div class="questions__group">
+          <div class="questions__item">
+            <header class="questions__header">
+              <i class="fa-solid fa-plus"></i>
+              <h3 class="questions__item-title">
+                How can I track and monitor the health and well-being of my livestock?
+              </h3>
+            </header>
+
+            <div class="questions__content">
+              <p class="questions__description">
+                To track and monitor the health of your livestock, regularly observe them, maintain detailed records, work with a veterinarian, implement parasite control, provide proper nutrition and water, practice biosecurity measures, consider technology solutions, and stay updated on best practices through education and training.
+              </p>
+            </div>
+          </div>
+          
+          <div class="questions__item">
+            <header class="questions__header">
+              <i class="fa-solid fa-plus"></i>
+              <h3 class="questions__item-title">
+                What are the best practices for managing animal nutrition and feeding?
+              </h3>
+            </header>
+
+            <div class="questions__content">
+              <p class="questions__description">
+                To manage animal nutrition and feeding effectively, consult with a livestock nutritionist, provide a balanced diet based on specific nutritional requirements, ensure access to clean water, practice feed quality control, establish consistent feeding routines, monitor body condition, consider seasonal variations, prevent overfeeding and underfeeding, and regularly evaluate and adjust the feeding program.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="questions__group">
+          <div class="questions__item">
+            <header class="questions__header">
+              <i class="fa-solid fa-plus"></i>
+              <h3 class="questions__item-title">
+                What's recommended vaccination schedules for different types of livestock?
+              </h3>
+            </header>
+
+            <div class="questions__content">
+              <p class="questions__description">
+                The recommended vaccination schedules for different types of livestock may vary, but in general, cattle may require vaccinations for diseases such as bovine viral diarrhea (BVD), infectious bovine rhinotracheitis (IBR), and leptospirosis. Sheep and goats often need vaccinations for clostridial diseases, enterotoxemia, and caseous lymphadenitis.
+              </p>
+            </div>
+          </div>
+          <div class="questions__item">
+            <header class="questions__header">
+              <i class="fa-solid fa-plus"></i>
+              <h3 class="questions__item-title">
+                How can I manage livestock records and keep track of important data?
+              </h3>
+            </header>
+
+            <div class="questions__content">
+              <p class="questions__description">
+                To effectively manage livestock records and track important data, establish an organized system with individual animal profiles, maintain comprehensive health, breeding, growth, and nutrition records, regularly update information, and ensure data security through backups and proper storage.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!--******************* CONTACTS ********************-->
+    <section class="contact section container" id="contact">
+      <div class="contact__container grid">
+        <div class="contact__box">
+          <h2 class="section__title">
+            Reach out to us today <br> via any of the given information
+          </h2>
+
+        <div class="contact__data">
+          <div class="contact__information">
+            <h3 class="contact__subtitle">Call us for instant support</h3>
+            <span class="contact__description">
+              <i class="fa-solid fa-phone contact__icon"></i>
+              +2347039240447
+            </span>
+          </div>
+
+          <div class="contact__information">
+            <h3 class="contact__subtitle">Message us for instant support</h3>
+            <span class="contact__description">
+              <i class="fa-solid fa-envelope contact__icon"></i>
+              user@gmail.com 
+            </span>
+          </div>
+        </div>
+      </div>
+      <form action="" class="contact__form">
+        <div class="contact__inputs">
+          <div class="contact__content">
+            <input type="email" placeholder="" class="contact__input" required>
+            <label for="" class="contact__label">Email</label>
+          </div>
+
+          <div class="contact__content">
+            <input type="email" placeholder="" class="contact__input" required>
+            <label for="" class="contact__label">Subject</label>
+          </div>
+
+          <div class="contact__content contact__area" >
+            <textarea name="Message"  placeholder=""  class="contact__input"></textarea>
+            
+            <label for="" class="contact__label">Message</label>
+          </div>
+           
+        </div>
+        <button class="button button--flex">
+          Send Message <i class='bx bx-right-top-arrow-circle'></i>
+        </button>
+      </form>
+
+    </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer section">
+    <div class="footer__container container grid">
+      <div class="footer__content">
+        <a href="#" class="footer__logo">
+          <i class="fa-solid fa-cow"></i> Rantec
+        </a>
+
+        <h3 class="footer__title">
+          Subscribe to our newsletter <br> to stay Update
+        </h3>
+
+        <div class="footer__subscribe">
+          <input type="email" placeholder="Enter your email" class="footer__input" required>
+          <button class="button button--flex footer__button">
+            Subscribe
+            <i class='bx bx-right-top-arrow-circle'></i></i>
+          </button>
+        </div>
+      </div>
+      <div class="footer__content">
+        <h3 class="footer__title">Our Address</h3>
+
+        <ul class="footer__data">
+           <li class="footer__information">Rayfield</li>
+           <li class="footer__information">Bukuru</li>
+           <li class="footer__information">123-456-789</li>
+        </ul>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">Contact Us</h3>
+
+        <ul class="footer__data">
+           <li class="footer__information"><i class="fa-solid fa-phone"></i>+2347080043999<li> 
+
+            <div class="footer__socials">
+              <a href="https://www.facebook.com/" class="footer__socials-link">
+                <i class='bx bxl-facebook-circle footer__logo-icon' ></i>
+              </a>
+              <a href="https://www.instagram.com/" class="footer__socials-link">
+                <i class='bx bxl-instagram footer__logo-icon' ></i>
+              </a>
+              <a href="https://www.twitter.com/" class="footer__socials-link"><i class="fa-brands fa-twitter footer__logo-icon"></i>
+              </a>
+              <a href="https://www.whatsapp.com/" class="footer__socials-link">
+                <i class="fa-brands fa-whatsapp footer__logo-icon"></i>
+              </a>
+            </div>
+        </ul>
+      </div>
+
+      <div class="footer__content">
+        <h3 class="footer__title">Credit cards</h3>
+
+       <div class="footer__cards">
+        <img src="images/landing-img/card1.svg" alt="">
+        <img src="images/landing-img/card2.svg" alt="">
+        <img src="images/landing-img/card3.svg" alt="">
+        <img src="images/landing-img/card4.svg" alt="">
+       </div>
+      </div>
+    </div>
+
+    <p class="footer__copy">&copy; Rantec. All rights reserved</p>
+  </footer>
+
+  <!-- SCROLL UP -->
+<a href="#" class="scrollup" id="scroll-up">
+  <i class='bx bx-up-arrow-alt scrollup__icon'></i>
+</a>
+  <!--  Js SCROLL REVEAL -->
+  <script src="scripts/admin.js"></script>
+  <!-- landing page js -->
+  <script src="scripts/landing-page.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Rantec| Dashboard</title>
+  
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon/dashboard-icon.png">
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+     <!--style reference from the Calendar component-->
+     <link href="https://cdn.syncfusion.com/ej2/22.2.5/ej2-base/styles/material.css" rel="stylesheet">
+     <link href="https://cdn.syncfusion.com/ej2/22.2.5/ej2-buttons/styles/material.css" rel="stylesheet">
+     <link href="https://cdn.syncfusion.com/ej2/22.2.5/ej2-calendars/styles/material.css" rel="stylesheet">
+
+    <!-- Font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" href="styles/superadmindashboard.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <!-- leaflet routing machine -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+    <!-- Jquery link  -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+    <!-- highcharts js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <script src="https://cdn.syncfusion.com/ej2/22.2.5/dist/ej2.min.js" type="text/javascript"></script>
+<script src="https://cdn.syncfusion.com/ej2/syncfusion-helper.js" type ="text/javascript"></script>
+</head>
+<body>
+  <section id="menu">
+  </section>
+    <section id="interface">
+      <div class="navigation">
+        <div class="n1">
+          <div>
+            <i  id="menu-btn" class="fa-solid fa-bars"></i>
+          </div>
+          <div class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="search">
+          </div>
+        </div>
+         <!-- Navigation content -->
+        <div class="dropdown">
+          <button class="profile-btn">
+            <i class="fa-regular fa-bell"></i>
+            <img src="images/no-image.jpg" alt="">
+          </button>
+          <div class="dropdown-content">
+            <div class="profile-info">
+              <h5 class="full-name">Admin</h5>
+              <p class="email">admin@gmail.com</p>
+            </div>
+            <a href="#" class="edit-picture">Change picture</a>
+            <!-- <a href="#"></a>
+            <a href="#">Email</a> -->
+            <a href="#" class="password">Password</a>
+            <a href="index.html"><i class="fa-solid fa-sign-out"></i>Logout</a>
+            <div class="sparkles">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+        
+          
+          <!-- <img src="images/james.jpg" alt=""> -->
+        </div>
+        
+      
+      </div>
+      </div>
+      <h3 class="i-name">
+        Dashboard
+        
+      </h3>
+      
+      <div class="values">
+        <div class="val-box">
+          <i class="fa-solid fa-users"></i>
+          <div>
+            <h3>219</h3>
+            <span>Total users</span>
+          </div>
+        </div>
+      
+        <div class="val-box">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <div>
+            <h3>326</h3>
+            <span>Total Orders</span>
+          </div>
+        </div>
+      <a href="#vet__section">
+        <div class="val-box">
+          <i class="fas fa-user-md"></i>
+          <div>
+            <h3>99</h3>
+            <span>Veterinary Specialists</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#farmer-section" id="farmer-link">
+        <div class="val-box">
+          <i class="fas fa-tractor"></i>
+          <div>
+            <h3>120</h3>
+            <span>Farmers</span>
+          </div>
+        </div>
+        </a>
+
+        <div class="val-box">
+          <i class="fas fa-calendar-check"></i>
+          <div>
+            <h3>600</h3>
+            <span>Bookings</span>
+          </div>
+        </div>
+    
+    </div>
+    <div class="board">
+      <div class="chart-container">
+        <div class="chart" id="bar-chart"></div>
+    </div>
+    <div id="container">
+      <!--element which is going to render the Calendar-->
+      <div id="element"></div>
+  </div>
+    </div>
+    <div id="map" style="width: 95%; height: 60vh; margin: 0 auto;"></div>
+    </section>
+
+
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- routing machine js -->
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+    <script>
+
+      // fetching the navigation menu
+      fetch('nav3.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('menu').innerHTML = data;
+      });
+
+      // full calender
+      var ele = document.getElementById('container');
+if(ele) {
+  ele.style.visibility = "visible";
+}   
+
+      // high chart barchart
+      const month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+const Appointments = [20, 400, 900, 400, 800, 900, 900, 80, 0, 0, 0, 0];
+
+// Create the chart
+const chartContainer = document.getElementById('bar-chart');
+
+const chartOptions = {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Number of Requests and Appointments'
+    },
+    xAxis: {
+        categories: month,
+        title: {
+            text: 'Months'
+        }
+    },
+    yAxis: {
+        title: {
+            text: 'Appointments'
+        }
+    },
+    series: [{
+        name: 'Appointments',
+        data: Appointments
+    }]
+};
+
+Highcharts.chart(chartContainer, chartOptions);
+    document.addEventListener('DOMContentLoaded', function () {
+    const contentPlaceholder = document.getElementById('farmer-content-placeholder');
+
+
+    const farmerLink = document.getElementById('farmer-link');
+    farmerLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        loadContent('Farmers', 'farmer-table-content.html');
+    });
+
+    // ... (other event listeners and code) ...
+});
+
+ // Initialize the map with initial location
+ var map = L.map('map').setView([9.9197, 9.8622], 12);
+        
+        // Add OSM tile layer
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        
+        // Add a marker at Jos Plateau
+        // L.marker([9.9197, 9.8622]).addTo(map)
+        //     .bindPopup('Jos Plateau, Nigeria')
+        //     .openPopup();
+
+            L.Routing.control({
+                    waypoints: [
+                        L.latLng(10.3159, 9.8442),   // Bauchi State, Nigeria
+                        L.latLng(10.4903, 9.2563)    // Another location in Bauchi State
+                    ]
+                    }).addTo(map);
+
+                    L.Routing.control({
+                    waypoints: [
+                        L.latLng( 10.2899, 11.1671),   // Bauchi State, Nigeria
+                        L.latLng(10.2874, 10.2874)    // Another location in Bauchi State
+                    ]
+                    }).addTo(map);
+
+                    L.Routing.control({
+                    waypoints: [
+                        L.latLng( 10.2899, 11.1671),   // Bauchi State, Nigeria
+                        L.latLng(10.2874, 10.2874)    // Another location in Bauchi State
+                    ]
+                    }).addTo(map);
+                    
+                    L.Routing.control({
+                    waypoints: [
+                        L.latLng( 9.3285, 12.3984),   // Adamawa State, Nigeria
+                        L.latLng(9.3068, 11.3417)  // Another location in Taraba State
+                    ]
+                    }).addTo(map);
+
+                    L.Routing.control({
+                    waypoints: [
+                        L.latLng(10.2903, 11.1673),   // Gombe State, Nigeria
+                        L.latLng(12.0022,  8.591956)    // kano State
+                    ]
+                    }).addTo(map);
+
+                    L.Routing.control({
+                    waypoints: [
+                        L.latLng( 9.3068,  6.6031),   // Niger State, Nigeria
+                        L.latLng( 8.4900,   4.5500)    // kwara State
+                    ]
+                    }).addTo(map);
+
+    </script>
+    <script src="scripts/fulll-calender.js" type="text/javascript"></script>
+    
+  <!-- <script src="scripts/Group-A.js"></script> -->
+</body>
+</html>

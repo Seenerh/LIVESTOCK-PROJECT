@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rantec|Login form</title>
+
+    <!-- favicon icon -->
+    <link rel="shortcut icon" type="image/jpg" href="images/favicon/login-icon.png">
+
+    <!-- css custom stylesheet -->
+    <link rel="stylesheet" href="./styles/login.css">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- form container markup -->
+    <section class="container forms">
+        <div class="form login">
+            <div class="form-content">
+                <header><img src="./images/logo.png" alt="" width="80" height="50"></header>
+
+                <form  id="login-form" action="#">
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" class="input" required>
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password" required>
+                        <i class='bx bxs-hide eye-icon'></i>
+                    </div>
+
+                    <div class="form-link">
+                        <a href="" class="forgot-pass">Forgot Passowrd?</a>
+                    </div>
+                    
+                    <div class="field button-field">
+                        <!-- <a class="sign-up" >Login</a> -->
+                        <button type="submit" class="sign-up">Login</button>
+                    </div>
+                </form>
+                <div class="form-link">
+                    <span>Don't have an account? <a href="signup.html"class= " link login-link"> SignUp</a> </span>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="media-options">
+                <a href="#" class="field google">
+                    <img src="./images/google-icon.png" alt="Google-icon" class="google-img"><span>Continue with Google</span>
+                </a>
+            </div>
+            <!-- social icon markup -->
+            <div class="media-options">
+                <a href="#" class="field facebook">
+                    <i class='bx bxl-facebook-circle facebook-icon'></i><span>Continue with Facebook</span>
+                </a>
+            </div>
+
+
+        </div>
+
+    </section>
+    <!-- javascript file -->
+    <script src="./scripts/form.js"></script>
+    <script src = "./scripts/api.js"></script>
+</body>
+
+</html>
