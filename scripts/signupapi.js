@@ -1,4 +1,5 @@
-document.getElementById("signup-button").addEventListener("click", function(event) {
+    // Handling registration
+    document.getElementById("signup-button").addEventListener("click", function(event) {
     event.preventDefault();
     const role = document.getElementById("role").value;
     const fullName = document.querySelector(".input[name='fullname']").value;
@@ -52,3 +53,6 @@ document.getElementById("signup-button").addEventListener("click", function(even
         console.log("An error occurred while processing your request.");
     });
 });
+
+
+

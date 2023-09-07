@@ -153,6 +153,7 @@
       <div id="element"></div>
   </div>
     </div>
+    
     <div id="map" style="width: 95%; height: 60vh; margin: 0 auto;"></div>
     </section>
 
@@ -277,6 +278,49 @@ Highcharts.chart(chartContainer, chartOptions);
                         L.latLng( 8.4900,   4.5500)    // kwara State
                     ]
                     }).addTo(map);
+
+                  // Function to generate random coordinates within a specified range
+function generateRandomCoordinates(minLat, maxLat, minLng, maxLng) {
+    const randomLat = Math.random() * (maxLat - minLat) + minLat;
+    const randomLng = Math.random() * (maxLng - minLng) + minLng;
+    return [randomLat, randomLng];
+}
+
+// Array of markers with random coordinates and colors
+const markers = [];
+
+// Define the total number of markers and the ratio of green markers
+const totalMarkers = 200; // Total number of markers
+const greenRatio = 0.7; // 70% of markers will be green
+
+// Generate markers in Nigeria between Jos and Bauchi and Abuja
+for (let i = 0; i < totalMarkers; i++) {
+    let randomLatLng;
+    if (i < totalMarkers / 2) {
+        // Generate markers between Jos and Bauchi
+        randomLatLng = generateRandomCoordinates(9.0, 11.0, 8.0, 10.0);
+    } else {
+        // Generate markers near Abuja
+        randomLatLng = generateRandomCoordinates(8.0, 9.0, 6.0, 7.0);
+    }
+
+    // Randomly assign blue or green color based on the ratio
+    const randomColor = Math.random() < greenRatio ? 'green' : 'blue';
+
+    markers.push({ latLng: randomLatLng, color: randomColor });
+}
+
+// Loop through the markers array and add them to the map
+markers.forEach(marker => {
+    const { latLng, color } = marker;
+
+    const customMarker = L.circleMarker(latLng, {
+        radius: 1,  // Adjust the radius as needed
+        color: color,  // Marker border color
+        fillColor: color,  // Fill color
+        fillOpacity: 1  // Opacity of the fill color (1 means fully opaque)
+    }).addTo(map);
+});
 
     </script>
     <script src="scripts/fulll-calender.js" type="text/javascript"></script>
