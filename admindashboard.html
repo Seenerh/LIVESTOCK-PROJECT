@@ -279,47 +279,41 @@ Highcharts.chart(chartContainer, chartOptions);
                     ]
                     }).addTo(map);
 
-                  // Function to generate random coordinates within a specified range
+                // Function to generate random coordinates within a specified range
 function generateRandomCoordinates(minLat, maxLat, minLng, maxLng) {
     const randomLat = Math.random() * (maxLat - minLat) + minLat;
     const randomLng = Math.random() * (maxLng - minLng) + minLng;
     return [randomLat, randomLng];
 }
 
-// Array of markers with random coordinates and colors
+// Array of markers with random coordinates and icons
 const markers = [];
 
-// Define the total number of markers and the ratio of green markers
-const totalMarkers = 200; // Total number of markers
-const greenRatio = 0.7; // 70% of markers will be green
+// Define the total number of markers
+const totalMarkers = 100; // Total number of markers
 
 // Generate markers in Nigeria between Jos and Bauchi and Abuja
 for (let i = 0; i < totalMarkers; i++) {
-    let randomLatLng;
-    if (i < totalMarkers / 2) {
-        // Generate markers between Jos and Bauchi
-        randomLatLng = generateRandomCoordinates(9.0, 11.0, 8.0, 10.0);
-    } else {
-        // Generate markers near Abuja
-        randomLatLng = generateRandomCoordinates(8.0, 9.0, 6.0, 7.0);
-    }
+    // Generate random coordinates
+    const randomLatLng = generateRandomCoordinates(6.0, 11.0, 6.0, 11.0);
 
-    // Randomly assign blue or green color based on the ratio
-    const randomColor = Math.random() < greenRatio ? 'green' : 'blue';
+    // Assign the icon randomly
+    const isFarmer = Math.random() < 0.5; // 50% chance of being a farmer
+    const iconUrl = isFarmer ? 'images/farmer.png' : 'images/doctoricon.png';
 
-    markers.push({ latLng: randomLatLng, color: randomColor });
+    const customIcon = L.icon({
+        iconUrl: iconUrl, // URL to the custom icon image
+        iconSize: [20, 20], // Adjust the icon size as needed
+    });
+
+    markers.push({ latLng: randomLatLng, icon: customIcon });
 }
 
 // Loop through the markers array and add them to the map
 markers.forEach(marker => {
-    const { latLng, color } = marker;
+    const { latLng, icon } = marker;
 
-    const customMarker = L.circleMarker(latLng, {
-        radius: 1,  // Adjust the radius as needed
-        color: color,  // Marker border color
-        fillColor: color,  // Fill color
-        fillOpacity: 1  // Opacity of the fill color (1 means fully opaque)
-    }).addTo(map);
+    L.marker(latLng, { icon: icon }).addTo(map);
 });
 
     </script>

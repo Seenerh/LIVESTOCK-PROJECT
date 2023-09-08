@@ -1,5 +1,5 @@
-    // Handling registration
-    document.getElementById("signup-button").addEventListener("click", function(event) {
+// Function for registration
+function registerUser(event) {
     event.preventDefault();
     const role = document.getElementById("role").value;
     const fullName = document.querySelector(".input[name='fullname']").value;
@@ -11,10 +11,11 @@
     // API endpoint URL for registration
     const apiUrl = "https://rantec-hh1l.onrender.com/authRoute/register";
 
-    //  request body
+    // Request body
     const requestBody = {
         role: role,
-        fullName: fullName,
+        // fullName: fullName,
+        name: fullName,
         email: email,
         location: location,
         password: password,
@@ -31,28 +32,27 @@
     })
     .then(response => response.json())
     .then(data => {
+        console.log(`userdata  ${ JSON.stringify(data)}`); // Convert data to JSON string for logging
         if (data.success) {
-            // Handle successful registration (e.g., show a success message)
+            // Handle successful registration
             alert("Registration successful!");
 
             // Redirect user based on their selected role
-            if (role === 'doctor') {
-                window.location.href = 'vethome.html'; // Redirect to the vet dashboard
-            } else if (role === 'farmer') {
-                window.location.href = 'farmerhome.html'; // // Redirect to the farmer dashboard
-                
-                    }
+            // if (data.role === 'doctor') {
+                window.location.href = 'login.html'; // Redirect to the vet dashboard
+            // } else if (data.role === 'farmer') {
+                // window.location.href = 'farmerhome.html'; // Redirect to the farmer dashboard
+            // }
         } else {
             // Handle failed registration
             alert("Registration failed. Please try again.");
         }
-        console.log(data);
     })
     .catch(error => {
         console.error("Error:", error);
-        console.log("An error occurred while processing your request.");
+        alert("An error occurred while processing your request.");
     });
-});
+}
 
-
-
+// Event listeners
+document.getElementById("signup-button").addEventListener("click", registerUser);
