@@ -38,7 +38,27 @@
 </head>
 <body>
   <section id="menu">
-
+    <div class="logo">
+      <img src="images/Screenshot_20230711-181851 (2).png" alt="">
+      <h2>Hi  Ahmad</h2><br />
+    </div>
+  
+    <!-- menu items -->
+    <div class="menu-items">
+       <div class="items"><a href="farmerhome.html"><i class="fa-solid fa-house"></i>Home</a></div>
+       <div class="items"><a class="sub-btn"><i class="fa-solid fa-user-doctor"></i>Livestock
+      <!-- dropdown menu --> 
+      <!-- dropdown arrow -->
+       <i class="fas fa-angle-right dropdown"></i>
+      </a>
+  
+      <div class="sub-menu">
+         <a href="livestock-1.html" class="sub-items">Large Ruminant</a>
+         <a href="" class="sub-items">Small Ruminant</a>
+      </div>
+      </div>
+       <div class="items"><a href="upcoming.html"><i class="fa-solid fa-cart-shopping"></i>Booking</a></div>
+    </div>
   </section>
     <section id="interface">
       <div class="navigation">
@@ -435,11 +455,12 @@
     <!-- row markup ends here -->
     <script>
 
-      fetch('nav.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('menu').innerHTML = data;
-      });
+$(document).ready(function() {
+            $('.sub-btn').click(function() {
+                $(this).next('.sub-menu').slideToggle();
+                $(this).find('.dropdown').toggleClass('rotate');
+            });
+        });
  </script>
 <!-- Load qrcode-svg library from a CDN -->
 <!-- <script src="https://unpkg.com/qrcode-svg/dist/qrcode.min.js"></script> -->

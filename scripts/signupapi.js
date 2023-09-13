@@ -35,7 +35,7 @@ function registerUser(event) {
         console.log(`userdata  ${ JSON.stringify(data)}`); // Convert data to JSON string for logging
         if (data.success) {
             // Handle successful registration
-            alert("Registration successful!");
+            alert("Your acoount is successfully created!");
 
             // Redirect user based on their selected role
             // if (data.role === 'doctor') {

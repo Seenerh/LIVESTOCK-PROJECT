@@ -34,7 +34,7 @@ async function loginUser(event) {
         if (data.success) {
             // Check if the 'role' property is present in data
             if (data.data.role) { // Directly check if data.role exists
-                console.log("User role: " + data.role);
+                console.log("User role: " + data.data.role);
 
                 if (data.data.role === "farmer") {
                     // Redirect to the farmer dashboard
@@ -42,6 +42,9 @@ async function loginUser(event) {
                 } else if (data.data.role === "doctor") {
                     // Redirect to the vet doctor dashboard
                     window.location.href = "vethome.html";
+                } else if (data.data.role === "Admin") {
+                     // Redirect to the vet admin dashboard
+                    window.location.href = "admindashboard.html"
                 } else {
                     // Handle unknown role (optional)
                     alert("Unknown user role. Please contact support.");

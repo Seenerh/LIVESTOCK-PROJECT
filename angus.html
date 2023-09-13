@@ -38,7 +38,27 @@
 </head>
 <body>
   <section id="menu">
-
+    <div class="logo">
+      <img src="images/Screenshot_20230711-181851 (2).png" alt="">
+      <h2>Hi  Ahmad</h2><br />
+    </div>
+  
+    <!-- menu items -->
+    <div class="menu-items">
+       <div class="items"><a href="farmerhome.html"><i class="fa-solid fa-house"></i>Home</a></div>
+       <div class="items"><a class="sub-btn"><i class="fa-solid fa-user-doctor"></i>Livestock
+      <!-- dropdown menu --> 
+      <!-- dropdown arrow -->
+       <i class="fas fa-angle-right dropdown"></i>
+      </a>
+  
+      <div class="sub-menu">
+         <a href="livestock-1.html" class="sub-items">Large Ruminant</a>
+         <a href="" class="sub-items">Small Ruminant</a>
+      </div>
+      </div>
+       <div class="items"><a href="upcoming.html"><i class="fa-solid fa-cart-shopping"></i>Booking</a></div>
+    </div>
   </section>
     <section id="interface">
       <div class="navigation">
@@ -99,48 +119,33 @@
 
 
              <!-- Form container with hidden form content -->
-    <div class="form-container" id="formContainer">
-    <div class="form-content">
+    <div class="form-container" id="formContainer" >
+    <div class="form-content"  id="livestock-popup">
       <span class="close">&times;</span>
-      <form>
-        <label for="vetName">Name:</label>
-        <input type="text" id="vetName" name="vetName"  placeholder=""required>
+      <form id="livestock-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"  placeholder=""required>
   
-        <label for="vetName">Breed:</label>
-        <input type="text" id="vetName" name="vetName"  placeholder=""required>
+        <label for="breed">Breed:</label>
+        <input type="text" id="breed" name="breed"  placeholder=""required>
 
-        <label for="date">DOB:</label>
-        <input type="date" id="date" name="date" required>
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" required>
   
-        <label for="diseaseName">Weight:</label>
-        <input type="text" id="diseaseName" name="diseaseName" placeholder="" required>
+        <label for="weight">Weight:</label>
+        <input type="text" id="weight" name="weight" placeholder="" required>
   
-        <label for="cause">Sex:</label>
-        <input type="text" id="cause" name="cause" placeholder="" required>
+        <label for="sex">Sex:</label>
+        <input type="text" id="sex" name="sex" placeholder="" required>
   
-        <label for="vaccine">ID:</label>
-        <input type="text" id="vaccine" name="vaccine"  placeholder=""required>
+        <!-- <label for="vaccine">ID:</label>
+        <input type="text" id="vaccine" name="vaccine"  placeholder=""required> -->
   
-        <button type="submit">Submit</button>
+        <button type="submit" id="submit-button" >Submit</button>
       </form>
     </div>
   </div>
        
-    <!-- <div class="form-popup" id="number-form">
-    <form>
-      <label for="sex-input">Sex:</label>
-      <input type="text" id="sex-input" placeholder="Enter sex" required>
-      
-      <label for="id-input">ID:</label>
-      <input type="text" id="id-input" placeholder="Enter ID" required>
-      
-      <div class="form-buttons">
-        <button type="submit" id="submit-btn">Submit</button>
-        <button type="button" id="close-btn">Close</button>
-      </div>
-    </form>
-  </div> -->
-  <!-- row markup ends here -->
       </div>
       <div class="values"></div>
   
@@ -157,7 +162,7 @@
             <td>QR CODE</td>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="livestock-table-body">
           <tr>
             <td class="people">
               <div class="people-des">
@@ -387,7 +392,7 @@
               </div>
             </td>
   
-            <td class="people-des">
+            <td class="people-des" >
               <h5>Muturu</h5> 
             </td>
             <td class="active"><p>M</p></td>
@@ -436,11 +441,130 @@
     <!-- row markup ends here -->
     <script>
 
-      fetch('nav.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('menu').innerHTML = data;
-      });
+$(document).ready(function() {
+            $('.sub-btn').click(function() {
+                $(this).next('.sub-menu').slideToggle();
+                $(this).find('.dropdown').toggleClass('rotate');
+            });
+        });
+
+         // Adding livestock code
+const livestockForm = document.getElementById("livestock-form");
+const livestockTableBody = document.getElementById("livestock-table-body");
+
+function altrows(firstcolor, secondcolor) {
+    var tableElements = document.getElementsByTagName("table");
+    for (var j = 0; j < tableElements.length; j++) {
+        var table = tableElements[j];
+        var rows = table.getElementsByTagName("tr");
+        for (var i = 0; i <= rows.length; i++) {
+            if (i % 2 == 0) {
+                rows[i].style.backgroundColor = firstcolor;
+            } else {
+                rows[i].style.backgroundColor = secondcolor;
+            }
+        }
+    }
+}
+
+
+function addLivestockToTable(breed, name, sex, healthStatus, age, weight) {
+    // Create a new row for the table
+    const newRow = document.createElement("tr");
+
+    newRow.innerHTML = `
+        <td class="people">
+            <div class="people-des">
+                <h5>${name}</h5>
+            </div>
+        </td>
+        <td class="people-des">
+            <h5>${breed}</h5>
+        </td>
+        <td class="active"><p>${sex}</p></td>
+        <td class="role">
+            <p style="color: red;">Not Assigned</p>
+        </td>
+        <td class="role">
+            <button class="view-button" onclick="viewLivestockDetails('${breed}', '${name}', '${sex}', '${healthStatus}', '${age}', '${weight}')">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+        </td>
+        <td class="edit scanButton"  data-image="images/qr-code.png">
+            <i class="fa-solid fa-qrcode"></i>
+        </td>
+    `;
+
+    // Append the new row to the table body 
+    livestockTableBody.appendChild(newRow);
+
+    altrows(" #787d8d", "#fff");
+}
+
+// Function to hide the pop-up
+function hidePopup() {
+  const popup = document.getElementById("formContainer");
+   popup.style.visibility = "hidden";
+}
+
+livestockForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    hidePopup();
+
+    // Retrieve values from the form fields
+    const breedInput = document.getElementById("breed");
+    const nameInput = document.getElementById("name");
+    const sexInput = document.getElementById("sex");
+    const ageInput = document.getElementById("age");
+    const weightInput = document.getElementById("weight");
+    const formcontent = document.getElementsByClassName("form-content");
+
+    const breed = breedInput.value;
+    const name = nameInput.value;
+    const sex = sexInput.value;
+    const age = ageInput.value;
+    const weight = weightInput.value;
+
+    // Create a JSON object with the livestock data
+    const livestockData = {
+        breed,
+        name,
+        sex,
+        age,
+        weight,
+    };
+
+    // Send a POST request to your backend API to add the livestock
+    fetch("https://rantec-hh1l.onrender.com/livestockRoute", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(livestockData),
+    })
+    .then((response) => {
+    if (!response.ok) {
+        throw new Error(`Server returned ${response.status} ${response.statusText}`);
+    }
+    return response.json();
+})
+    .then((data) => {
+      console.log(data);
+        // Assuming your API returns the added livestock data, you can add it to the table
+        addLivestockToTable(data.breed, data.name, data.sex, data.age, data.weight);
+
+        // Clear the input fields
+        breedInput.value = "";
+        nameInput.value = "";
+        sexInput.value = "male"; // Set default value to "male"
+        ageInput.value = "";
+        weightInput.value = "";
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+    });
+});
+
  </script>
 <!-- Load qrcode-svg library from a CDN -->
 <!-- <script src="https://unpkg.com/qrcode-svg/dist/qrcode.min.js"></script> -->

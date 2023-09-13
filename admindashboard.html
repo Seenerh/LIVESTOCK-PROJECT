@@ -225,66 +225,89 @@ Highcharts.chart(chartContainer, chartOptions);
 });
 
  // Initialize the map with initial location
- var map = L.map('map').setView([9.9197, 9.8622], 12);
+      var map = L.map('map').setView([9.3361, 9.4113], 8); // Set the initial center and zoom level
+
         
         // Add OSM tile layer
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+       }).addTo(map);
+ 
         
-        // Add a marker at Jos Plateau
-        // L.marker([9.9197, 9.8622]).addTo(map)
-        //     .bindPopup('Jos Plateau, Nigeria')
-        //     .openPopup();
+        /// Example GeoJSON data for Plateau State
+var plateauGeoJSON = {
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            // Coordinates for Plateau State boundaries
+        ]
+    },
+    "properties": {
+        "name": "Plateau State"
+    }
+};
 
-            L.Routing.control({
-                    waypoints: [
-                        L.latLng(10.3159, 9.8442),   // Bauchi State, Nigeria
-                        L.latLng(10.4903, 9.2563)    // Another location in Bauchi State
-                    ]
-                    }).addTo(map);
+L.geoJSON(plateauGeoJSON).addTo(map);
 
-                    L.Routing.control({
-                    waypoints: [
-                        L.latLng( 10.2899, 11.1671),   // Bauchi State, Nigeria
-                        L.latLng(10.2874, 10.2874)    // Another location in Bauchi State
-                    ]
-                    }).addTo(map);
 
-                    L.Routing.control({
-                    waypoints: [
-                        L.latLng( 10.2899, 11.1671),   // Bauchi State, Nigeria
-                        L.latLng(10.2874, 10.2874)    // Another location in Bauchi State
-                    ]
-                    }).addTo(map);
-                    
-                    L.Routing.control({
-                    waypoints: [
-                        L.latLng( 9.3285, 12.3984),   // Adamawa State, Nigeria
-                        L.latLng(9.3068, 11.3417)  // Another location in Taraba State
-                    ]
-                    }).addTo(map);
+               // Create markers for starting points
+var startingPoint1 = L.marker([9.3361, 9.4113]).addTo(map); // Jos, Plateau State
+var startingPoint2 = L.marker([9.3361, 9.4113]).addTo(map); // Jos, Plateau State
+var startingPoint3 = L.marker([8.9096, 9.5280]).addTo(map); // Shendam, Plateau State
+var startingPoint4 = L.marker([9.3250, 9.4197]).addTo(map); // Pankshin, Plateau State
+var startingPoint5 = L.marker([9.3354, 9.4191]).addTo(map); // Barkin Ladi, Plateau State
+var startingPoint6 = L.marker([9.3216, 9.4223]).addTo(map); // Mangu, Plateau State
 
-                    L.Routing.control({
-                    waypoints: [
-                        L.latLng(10.2903, 11.1673),   // Gombe State, Nigeria
-                        L.latLng(12.0022,  8.591956)    // kano State
-                    ]
-                    }).addTo(map);
+// Create routing controls with waypoints
+L.Routing.control({
+    waypoints: [
+        startingPoint1.getLatLng(),
+        L.latLng(9.6, 9.8)  // Another location in Jos
+    ]
+}).addTo(map);
 
-                    L.Routing.control({
-                    waypoints: [
-                        L.latLng( 9.3068,  6.6031),   // Niger State, Nigeria
-                        L.latLng( 8.4900,   4.5500)    // kwara State
-                    ]
-                    }).addTo(map);
+L.Routing.control({
+    waypoints: [
+        startingPoint2.getLatLng(),
+        L.latLng(9.3061, 9.3862)  // Bukuru, Plateau State
+    ]
+}).addTo(map);
+
+L.Routing.control({
+    waypoints: [
+        startingPoint3.getLatLng(),
+        L.latLng(9.3203, 9.4124)  // Qua'an Pan, Plateau State
+    ]
+}).addTo(map);
+
+L.Routing.control({
+    waypoints: [
+        startingPoint4.getLatLng(),
+        L.latLng(9.1175, 9.4187)  // Langtang North, Plateau State
+    ]
+}).addTo(map);
+
+L.Routing.control({
+    waypoints: [
+        startingPoint5.getLatLng(),
+        L.latLng(9.3839, 9.6003)  // Riyom, Plateau State
+    ]
+}).addTo(map);
+
+L.Routing.control({
+    waypoints: [
+        startingPoint6.getLatLng(),
+        L.latLng(9.3474, 9.6055)  // Bokkos, Plateau State
+    ]
+}).addTo(map);
 
                 // Function to generate random coordinates within a specified range
-function generateRandomCoordinates(minLat, maxLat, minLng, maxLng) {
-    const randomLat = Math.random() * (maxLat - minLat) + minLat;
-    const randomLng = Math.random() * (maxLng - minLng) + minLng;
-    return [randomLat, randomLng];
-}
+                  function generateRandomCoordinates(minLat, maxLat, minLng, maxLng) {
+                      const randomLat = Math.random() * (maxLat - minLat) + minLat;
+                      const randomLng = Math.random() * (maxLng - minLng) + minLng;
+                      return [randomLat, randomLng];
+                  }
 
 // Array of markers with random coordinates and icons
 const markers = [];
