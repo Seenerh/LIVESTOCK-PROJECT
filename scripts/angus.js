@@ -36,6 +36,7 @@ const formContainer = document.getElementById('formContainer');
 
 addButton.addEventListener('click', function() {
   formContainer.style.display = 'block';
+  formContainer.style.visibility = 'visible';
 });
 
 const closeButton = formContainer.querySelector('.close');

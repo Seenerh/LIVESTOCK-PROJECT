@@ -47,18 +47,18 @@
     <div class="menu-items">
        <div class="items"><a href="farmerhome.html"><i class="fa-solid fa-house"></i>Home</a></div>
        <div class="items"><a class="sub-btn"><i class="fa-solid fa-user-doctor"></i>Livestock
-      <!-- dropdown menu --> 
-      <!-- dropdown arrow -->
-       <i class="fas fa-angle-right dropdown"></i>
-      </a>
-  
-      <div class="sub-menu">
-         <a href="livestock-1.html" class="sub-items">Large Ruminant</a>
-         <a href="" class="sub-items">Small Ruminant</a>
+        <!-- dropdown menu --> 
+        <!-- dropdown arrow -->
+         <i class="fas fa-angle-right dropdown"></i>
+        </a>
+    
+        <div class="sub-menu">
+          <a href="livestock-1.html" class="sub-items"><i class="fas fa-horse"></i>Large Ruminant</a>
+          <a href="#" class="sub-items"><i class="fa-solid fa-hippo"></i>Small Ruminant</a>
+        </div>
+        </div>
+         <div class="items"><a href="upcoming.html"><i class="fa-solid fa-cart-shopping"></i>Booking</a></div>
       </div>
-      </div>
-       <div class="items"><a href="upcoming.html"><i class="fa-solid fa-cart-shopping"></i>Booking</a></div>
-    </div>
   </section>
     <section id="interface">
       <div class="navigation">
@@ -448,7 +448,7 @@ $(document).ready(function() {
             });
         });
 
-         // Adding livestock code
+        // Adding livestock code
 const livestockForm = document.getElementById("livestock-form");
 const livestockTableBody = document.getElementById("livestock-table-body");
 
@@ -457,7 +457,7 @@ function altrows(firstcolor, secondcolor) {
     for (var j = 0; j < tableElements.length; j++) {
         var table = tableElements[j];
         var rows = table.getElementsByTagName("tr");
-        for (var i = 0; i <= rows.length; i++) {
+        for (var i = 0; i < rows.length; i++) { // Fix the condition here
             if (i % 2 == 0) {
                 rows[i].style.backgroundColor = firstcolor;
             } else {
@@ -466,7 +466,6 @@ function altrows(firstcolor, secondcolor) {
         }
     }
 }
-
 
 function addLivestockToTable(breed, name, sex, healthStatus, age, weight) {
     // Create a new row for the table
@@ -498,13 +497,13 @@ function addLivestockToTable(breed, name, sex, healthStatus, age, weight) {
     // Append the new row to the table body 
     livestockTableBody.appendChild(newRow);
 
-    altrows(" #787d8d", "#fff");
+    altrows("#787d8d", "#fff");
 }
 
 // Function to hide the pop-up
 function hidePopup() {
-  const popup = document.getElementById("formContainer");
-   popup.style.visibility = "hidden";
+    alert("Livestock Added Successfully");
+    formContainer.style.visibility = 'hidden';
 }
 
 livestockForm.addEventListener("submit", function (e) {
@@ -543,13 +542,13 @@ livestockForm.addEventListener("submit", function (e) {
         body: JSON.stringify(livestockData),
     })
     .then((response) => {
-    if (!response.ok) {
-        throw new Error(`Server returned ${response.status} ${response.statusText}`);
-    }
-    return response.json();
-})
+        if (!response.ok) {
+            throw new Error(`Server returned ${response.status} ${response.statusText}`);
+        }
+        return response.json();
+    })
     .then((data) => {
-      console.log(data);
+        console.log(data);
         // Assuming your API returns the added livestock data, you can add it to the table
         addLivestockToTable(data.breed, data.name, data.sex, data.age, data.weight);
 
@@ -564,6 +563,36 @@ livestockForm.addEventListener("submit", function (e) {
         console.error("Error:", error);
     });
 });
+
+// Function to fetch and populate livestock data on page load
+function fetchAndPopulateLivestockData() {
+    fetch("https://rantec-hh1l.onrender.com/livestockRoute")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Server returned ${response.status} ${response.statusText}`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            // Populate the table with the fetched livestock data
+            data.forEach((livestock) => {
+                addLivestockToTable(
+                    livestock.breed,
+                    livestock.name,
+                    livestock.sex,
+                    livestock.healthStatus,
+                    livestock.age,
+                    livestock.weight
+                );
+            });
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
+}
+
+// Call the function to fetch and populate data on page load
+fetchAndPopulateLivestockData();
 
  </script>
 <!-- Load qrcode-svg library from a CDN -->

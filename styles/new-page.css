@@ -172,7 +172,7 @@ textarea, select {
   outline: #0F7C2E;
 }
 
-input[type="submit"] {
+button[type="submit"] {
   width: fit-content;
   padding: 10px 16px;
   background-color: #0F7C2E;
