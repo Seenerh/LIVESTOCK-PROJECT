@@ -166,6 +166,32 @@ button.sign-up {
     align-items: center;
     justify-content: center;
 }
+
+#signup-button.loading {
+    /* Styles for loading state:
+        - Disable button click
+        - Change background color (optional)
+        - Add a spinner element */
+    pointer-events: none; /* Disable clicks */
+    background-color: #c52828; /* Optional background change */
+}
+
+/* Styles for the spinner (can be customized) */
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    border-top-color: #000; /* Color for the spinning part */
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 .line {
     position: relative;
     height: 1px;

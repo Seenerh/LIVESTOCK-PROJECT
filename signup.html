@@ -22,7 +22,7 @@
     <section class="container forms">
         <div class="form signup">
             <div class="form-content">
-                <header>Signup</header>
+                <header>Signup nott</header>
 
                 <form  id="signup-form" action="#">
                     <div class="select">
@@ -94,6 +94,16 @@
         vetFields.style.display = "none";
     }
 });
+});
+
+const signupButton = document.getElementById('signup-button');
+
+signupButton.addEventListener('click', () => {
+    signupButton.classList.add('loading');
+
+    setTimeout(() => {
+        signupButton.classList.remove('loading');
+    }, 2000); // Simulate a 2-second delay (replace with your signup logic)
 });
 
         
